@@ -2,7 +2,8 @@ from setuptools import setup, find_packages
 
 setup(name='sqltemplate',
       version='0.5.0',
-      description='Database querying tool for Django, based on SQL templates',
+      description='Core library for database querying tools '
+                  'based on templates',
       classifiers=[
         "Development Status :: 3 - Alpha",
         "Environment :: Web Environment",
