@@ -1,6 +1,6 @@
 import flatdict
 
-from .exceptions import ObjectDoesNotExist, MultipleObjectsReturned
+from .exceptions import MultipleRowsFound, RowNotFound
 from .utils import prettify
 
 
@@ -157,10 +157,10 @@ class TemplateQuery(object):
         try:
             row = result[0]
         except IndexError:
-            raise ObjectDoesNotExist('Query returned no rows')
+            raise RowNotFound('Query returned no rows')
 
         if len(result) > 1:
-            raise MultipleObjectsReturned('Query returned more than one row')
+            raise MultipleRowsFound('Query returned more than one row')
 
         return row[0]
 

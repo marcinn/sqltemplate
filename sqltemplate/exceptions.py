@@ -1,6 +1,10 @@
-try:
-    from django.template.exceptions import TemplateDoesNotExist
-except ImportError:
-    from django.template.base import TemplateDoesNotExist
+class TemplateNotFound(Exception):
+    pass
 
-from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
+
+class RowNotFound(Exception):
+    pass
+
+
+class MultipleRowsFound(Exception):
+    pass
