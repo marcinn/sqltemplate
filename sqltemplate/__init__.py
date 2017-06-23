@@ -11,5 +11,5 @@ else:
 
     class SQLTemplate(BaseSQLTemplate):
         def __init__(self, using=None, context=None):  # NOQA
-            super(BaseSQLTemplate, self).__init__(
+            super(SQLTemplate, self).__init__(
                     adapter=DjangoAdapter, using=using, context=context)
