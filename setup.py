@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='sqltemplate',
-      version='0.5.1',
+      version='0.5.1-2',
       description='Core library for database querying tools '
                   'based on templates',
       classifiers=[
@@ -16,7 +16,10 @@ setup(name='sqltemplate',
       author='Marcin Nowak',
       author_email='marcin.j.nowak@gmail.com',
       url='https://github.com/marcinn/sqltemplate',
-      install_requires=['flatdict>=1.2.0,<2.0.0', 'sqlparse>=0.1.19,<0.2'],
+      install_requires=['flatdict>=1.2.0,<2.0.0'],
+      extras_require={
+          'prettysql': 'sqlparse>=0.1.19,<1.0',
+          },
       keywords='python sql template',
       packages=find_packages('.'),
       include_package_data=True,
