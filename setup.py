@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='sqltemplate',
-      version='0.5.2-2',
+      version='0.5.3',
       description='Core library for database querying tools '
                   'based on templates',
       classifiers=[
