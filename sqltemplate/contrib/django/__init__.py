@@ -97,14 +97,15 @@ def from_string(*args, **kw):
 
 @contextlib.contextmanager
 def context(**context):
-    yield SQLTemplate(context=context)
+    yield SQLTemplate(adapter=DjangoAdapter(), context=context)
 
 
 @contextlib.contextmanager
 def using(name):
-    yield SQLTemplate(using=name)
+    yield SQLTemplate(adapter=DjangoAdapter(), using=name)
 
 
 @contextlib.contextmanager
 def scope(context=None, using=None):
-    yield SQLTemplate(using=using, context=context)
+    yield SQLTemplate(
+            adapter=DjangoAdapter(), using=using, context=context)
