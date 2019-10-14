@@ -1,4 +1,5 @@
 import flatdict
+import six
 
 from .exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 from .utils import prettify
@@ -13,6 +14,7 @@ class SQLResult(object):
         return self._cursor
 
 
+@six.python_2_unicode_compatible
 class SQLValuesResult(SQLResult):
     def __init__(self, *args, **kw):
         super(SQLValuesResult, self).__init__(*args, **kw)
@@ -75,6 +77,7 @@ class ValuesIterator(SQLValuesResult):
             yield dict(zip(self._columns, row))
 
 
+@six.python_2_unicode_compatible
 class TemplateQuery(object):
     def __init__(self, adapter, template, context=None, using=None):
         self._adapter = adapter
@@ -179,5 +182,5 @@ class TemplateQuery(object):
             adapter=self._adapter, template=template,
             context=context, using=using, **kwargs)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.sql
