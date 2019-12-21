@@ -31,7 +31,7 @@ The `sqltemplate` provides an abstraction layer for templating SQL
 queries and working with query results. It requires an adapter to work.
 
 For example - if you want to use `sqltemplate` together with Django
-templates and database management, use `django-sqltemplate` adapter
+templates and database management, use [django-sqltemplate](https://github.com/marcinn/django-sqltemplate) adapter
 directly.
 
 
