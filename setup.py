@@ -1,7 +1,16 @@
+import os
 from setuptools import setup, find_packages
 
+
+with open(
+    os.path.join(os.path.dirname(__file__), 'README.md'),
+    encoding='utf-8'
+) as fh:
+    long_description = fh.read()
+
+
 setup(name='sqltemplate',
-      version='0.5.4',
+      version='0.5.4.post1',
       description='Core library for database querying tools '
                   'based on templates',
       classifiers=[
@@ -20,6 +29,8 @@ setup(name='sqltemplate',
       extras_require={
           'prettysql': 'sqlparse>=0.1.19,<1.0',
           },
+      long_description=long_description,
+      long_description_content_type='text/markdown',
       keywords='python sql template',
       packages=find_packages('.'),
       include_package_data=True,
